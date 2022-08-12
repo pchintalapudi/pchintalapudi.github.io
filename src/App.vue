@@ -143,6 +143,7 @@ main {
   font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
   overflow: auto;
+  overflow-x: hidden;
   height: 100vh;
 }
 .blue {
