@@ -75,16 +75,16 @@ export default defineComponent({
 .light {
   --bg-color: 255, 255, 255;
   --fg-color: 0, 0, 0;
-  --blue: 0, 100, 200;
-  --green: 0, 144, 64;
-  --yellow: 200, 175, 0;
-  --red: 206, 32, 32;
+  --blue: 0, 0, 255;
+  --green: 0, 225, 94;
+  --yellow: 250, 235, 0;
+  --red: 255, 32, 32;
 }
 .dark {
   --bg-color: 18, 18, 18;
   --fg-color: 222, 222, 222;
   --blue: 0, 127, 255;
-  --green: 32, 225, 64;
+  --green: 36, 205, 72;
   --yellow: 255, 215, 0;
   --red: 225, 64, 64;
 }
@@ -191,6 +191,7 @@ main {
   left: calc(50% - 1px);
   bottom: 5%;
   border-right: 2px solid rgba(var(--fg-color), 1);
+  border-radius: 50%;
 }
 .ray:nth-of-type(1) {
   transform: rotate(0deg);
@@ -215,8 +216,8 @@ main {
 .dark-mode-toggle::after {
   position: absolute;
   content: "";
-  width: 62.5%;
-  height: 62.5%;
+  width: 57.5%;
+  height: 57.5%;
   border-radius: 50%;
   z-index: 1;
   top: 0;
@@ -234,8 +235,8 @@ main {
 .dark-mode-toggle::before {
   position: absolute;
   content: "";
-  width: 62.5%;
-  height: 62.5%;
+  width: 57.5%;
+  height: 57.5%;
   top: 0;
   left: 0;
   right: 0;

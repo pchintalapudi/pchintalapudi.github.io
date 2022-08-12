@@ -1,6 +1,6 @@
 <template>
   <article id="work">
-    <icon-vue :color="'yellow'" :icon="'science'"></icon-vue>
+    <icon-vue :color="'green'" :icon="'science'"></icon-vue>
     <h2 class="header">Work Experience</h2>
     <section class="experiences">
       <article

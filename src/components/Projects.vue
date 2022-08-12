@@ -1,6 +1,6 @@
 <template>
   <article id="projects">
-    <icon-vue :color="'red'" :icon="'devices'"></icon-vue>
+    <icon-vue :color="'blue'" :icon="'devices'"></icon-vue>
     <section class="body">
       <section>
         <h2 class="header">Personal Projects</h2>
@@ -99,12 +99,6 @@ export default defineComponent({
 .header {
   text-align: center;
   padding: 40px;
-}
-.cs:hover {
-  background-color: rgba(var(--red), 0.1);
-}
-.bio:hover {
-  background-color: rgba(var(--green), 0.1);
 }
 .description :deep(*) {
   display: inline-block;

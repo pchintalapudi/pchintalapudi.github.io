@@ -1,13 +1,13 @@
 <template>
   <article id="education">
-    <icon-vue :color="'green'" :icon="'school'"></icon-vue>
+    <icon-vue :color="'red'" :icon="'school'"></icon-vue>
     <h2 class="title">Education and Coursework</h2>
     <h3 class="school">Massachusetts Institute of Technology</h3>
     <h4 class="degree">Masters of Engineering in <mark class="red">Electrical Engineering and Computer Science</mark></h4>
     <h4 class="degree">
       Bachelor of Science in
       <mark class="red">Computer Science Engineering</mark> and
-      <mark class="green">Bioengineering</mark>
+      <mark class="red">Bioengineering</mark>
     </h4>
     <section class="courses">
       <article
@@ -78,21 +78,12 @@ mark {
   border-radius: 10px;
   background-color: rgba(var(--fg-color), 0.1);
 }
-/* .cs {
-  background-color: rgba(var(--red), 0.1);
-}
-.bio {
-  background-color: rgba(var(--green), 0.1);
-}
-.cs.bio {
-  background-color: rgba(var(--yellow), 0.1);
-} */
 
-@media (max-width: 1000px) {
+/* @media (max-width: 1000px) { */
   .class.all {
     display: none;
   }
-}
+/* } */
 @media (max-width: 800px) {
   .class.top20 {
     display: none;

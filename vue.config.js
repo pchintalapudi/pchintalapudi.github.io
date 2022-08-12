@@ -1,6 +1,6 @@
 const { defineConfig } = require('@vue/cli-service')
 const path = require('path')
-const buildForTest = true;
+const buildForTest = false;
 module.exports = defineConfig({
   transpileDependencies: true,
   chainWebpack: config => {

@@ -40,11 +40,11 @@
       </section>
       <section class="links">
         <a href="#summary" class="text blue"><p>Quick Summary</p></a>
-        <a href="#education" class="text green"
+        <a href="#education" class="text red"
           ><p>Education and Coursework</p></a
         >
-        <a href="#work" class="text yellow"><p>Work Experience</p></a>
-        <a href="#projects" class="text red"><p>Personal Projects</p></a>
+        <a href="#work" class="text green"><p>Work Experience</p></a>
+        <a href="#projects" class="text blue"><p>Personal Projects</p></a>
       </section>
     </section>
   </article>
@@ -80,7 +80,10 @@ export default defineComponent({
   background-color: rgba(var(--fg-color), 0.1);
 }
 .links > :hover {
-  background-color: rgba(var(--fg-color), 0.1);
+  opacity: 1;
+  background-color: rgba(var(--fg-color), 0.2);
+}
+.dark .links > :hover {
   color: var(--color);
 }
 .links > * > *::after {
@@ -94,8 +97,10 @@ export default defineComponent({
   align-self: center;
   transition: transform 150ms, border-color 300ms;
 }
-.links > :hover > *::after {
+.links > :hover > ::after {
   transform: translateY(10px) rotate(45deg);
+}
+.dark .links > :hover > ::after {
   border-color: var(--color);
 }
 .header {

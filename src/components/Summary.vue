@@ -1,27 +1,8 @@
 <template>
   <article id="summary">
     <section>
-      <p class="unlinkable">
-        <icon-vue :color="'blue'" :icon="'devices'"></icon-vue>
-        <h2>Skills and Expertise</h2>
-      </p>
-      <div class="data">
-        <numbered-stat
-          :name="'Programming Languages'"
-          :number="languages.length"
-          :subtext="languages.join(', ')"
-        ></numbered-stat>
-        <p class="conjunction">and</p>
-        <numbered-stat
-          :name="'Focus Areas'"
-          :number="focuses.length"
-          :subtext="focuses.join(', ')"
-        ></numbered-stat>
-      </div>
-    </section>
-    <section>
-      <a class="linkable" href="#education" style="--linkable-color:var(--green)">
-        <icon-vue :color="'green'" :icon="'school'"></icon-vue>
+      <a class="linkable" href="#education" style="--linkable-color:var(--red)">
+        <icon-vue :color="'red'" :icon="'school'"></icon-vue>
         <h2>Education and Coursework</h2>
       </a>
       <div class="data">
@@ -39,8 +20,8 @@
       </div>
     </section>
     <section>
-      <a class="linkable" href="#work" style="--linkable-color:var(--yellow)">
-        <icon-vue :color="'yellow'" :icon="'science'"></icon-vue>
+      <a class="linkable" href="#work" style="--linkable-color:var(--green)">
+        <icon-vue :color="'green'" :icon="'science'"></icon-vue>
         <h2>Internships and Research</h2>
       </a>
       <div class="data">
@@ -54,6 +35,25 @@
           :name="'Research Groups'"
           :number="research.length"
           :subtext="Array.from(new Set(research.map(i => i.company))).join(', ')"
+        ></numbered-stat>
+      </div>
+    </section>
+    <section>
+      <a class="linkable" href="#projects" style="--linkable-color:var(--blue)">
+        <icon-vue :color="'blue'" :icon="'devices'"></icon-vue>
+        <h2>Skills and Expertise</h2>
+      </a>
+      <div class="data">
+        <numbered-stat
+          :name="'Programming Languages'"
+          :number="languages.length"
+          :subtext="languages.join(', ')"
+        ></numbered-stat>
+        <p class="conjunction">and</p>
+        <numbered-stat
+          :name="'Focus Areas'"
+          :number="focuses.length"
+          :subtext="focuses.join(', ')"
         ></numbered-stat>
       </div>
     </section>
@@ -99,10 +99,10 @@ export default defineComponent({
   padding: 20px;
   font-size: 1.0625em;
   display: grid;
-  grid-template-rows: auto 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   column-gap: 30px;
   grid-auto-flow: column;
-  flex-basis: 100vh;
 }
 #summary > * {
   flex: 1;
@@ -123,7 +123,7 @@ export default defineComponent({
 .linkable > * {
   transition: color 300ms;
 }
-.linkable:hover > * {
+.dark .linkable:hover > * {
   color: rgb(var(--linkable-color));
 }
 .unlinkable {
@@ -133,7 +133,15 @@ export default defineComponent({
   padding: 0.375em;
   display: none;
 }
+@media (max-width: 1000px) {
+  .icon {
+    font-size: 6.25em;
+  }
+}
 @media (max-width: 800px) {
+  .icon {
+    font-size: 6em;
+  }
   #summary {
     font-size: 1.125em;
   }
@@ -152,6 +160,9 @@ export default defineComponent({
   .data {
     display: inline-block;
     padding: 0 20px;
+  }
+  .icon {
+    font-size: 5em;
   }
 }
 </style>
