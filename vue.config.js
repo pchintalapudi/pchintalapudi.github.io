@@ -1,5 +1,6 @@
 const { defineConfig } = require('@vue/cli-service')
 const path = require('path')
+const buildForTest = true;
 module.exports = defineConfig({
   transpileDependencies: true,
   chainWebpack: config => {
@@ -15,5 +16,6 @@ module.exports = defineConfig({
         .type('asset/source')
   },
   outputDir: path.resolve(__dirname, "docs"),
-  assetsDir: "static"
+  assetsDir: "static",
+  publicPath: buildForTest && process.env.NODE_ENV === 'production' ? '/website-dev/' : '/',
 })

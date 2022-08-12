@@ -1,6 +1,6 @@
 <template>
   <article id="education">
-    <b class="icon"><graduation-cap :color="'green'"></graduation-cap></b>
+    <icon-vue :color="'green'" :icon="'school'"></icon-vue>
     <h2 class="title">Education and Coursework</h2>
     <h3 class="school">Massachusetts Institute of Technology</h3>
     <h4 class="degree">Masters of Engineering in <mark class="red">Electrical Engineering and Computer Science</mark></h4>
@@ -25,11 +25,11 @@
 <script lang="ts">
 import { useStore } from "@/store";
 import { defineComponent } from "vue";
-import GraduationCap from "./icons/GraduationCap.vue";
+import IconVue from "./Icon.vue";
 
 export default defineComponent({
   components: {
-    GraduationCap,
+    IconVue,
   },
   computed: {
     classes() {
@@ -60,25 +60,7 @@ mark {
   display: inline-block;
 }
 .icon {
-  width: 120px;
-  height: 120px;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-}
-.icon::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(var(--fg-color), 0.1);
-  transition: background-color 300ms;
-  border-radius: 50%;
-}
-.icon > * {
-  transform: scale(3);
+  font-size: 10em;
 }
 .courses {
   padding: 20px 5vw;
@@ -112,13 +94,6 @@ mark {
   }
 }
 @media (max-width: 800px) {
-  .icon {
-    width: 100px;
-    height: 100px;
-  }
-  .icon > * {
-    transform: scale(2.5);
-  }
   .class.top20 {
     display: none;
   }

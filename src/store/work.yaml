@@ -14,15 +14,14 @@
     - title: Mentor
       name: Takafumi Arakaki
   description: >-
-    After finishing my senior year of undergrad a semester early, I returned to JuliaLab
-    for my masters thesis on reducing Julia's compilation latency. In this project, I
-    intend to leverage several new capabilities exposed by LLVM's ORC JIT toolchain
+    I returned to JuliaLab for my masters thesis on reducing Julia's compilation latency.
+    In this project, I leverage new capabilities exposed by LLVM's ORC JIT toolchain
     for lazier and parallel compilation to reduce the real time spent in the compiler.
     Currently, my efforts are focusing on removing a global lock that surrounds compilation
     and improving the LLVM-based memory management subsystem to support multithreaded
-    compilation. Additionally, I am in charge of migrating Julia from LLVM's old pass
-    manager to LLVM's new pass manager, which promises more aggressive analysis caching
-    to further reduce time spent in compilation. 
+    compilation. I am also in charge of migrating Julia from LLVM's old pass manager to 
+    LLVM's new pass manager, which promises more aggressive analysis caching to further 
+    reduce time spent in compilation.
 - id: nvidia2
   company: NVIDIA
   role: Computer Architecture Intern
@@ -66,7 +65,7 @@
     query itself, which allowed the database processor to more efficiently retrieve
     records and further reduced memory consumption of python objects. I then added
     a number of new inputs to the model to improve its prediction capabilities using
-    information available in the central database. 
+    information available in the central database.
 - id: julia
   company: JuliaLab
   role: Undergraduate Researcher
@@ -108,18 +107,14 @@
       name: Sameer Deshpande
   description: >-
     For the summer after my junior year, I interned at [NVIDIA](nvidia.com), the
-    company that invented the GPU. As part of my assignment, I designed,
-    specified, built, and tested a replayer for GPU packets in C++. By
-    leveraging the power of C++ templates and automated type inference, I was
-    able to provide a low-cost extensible method of autogenerating serialization
-    methods without needing to explicitly specify the type of object that was
-    being serialized. Additionally, I carefully designed the program to be
-    robust and save enough data to replicate segmentation faults and other
-    signal-based program crashes while also incrementally compressing the saved
-    data on the fly to reduce memory and disk usage. I further developed several
-    tools to aggregate statistics about the flow of packets into and out of GPU
-    units. In the process of developing the system, I also honed my skills with
-    using ssh, tmux, and Perforce as a version control system.
+    company that invented the GPU. I designed and tested a replayer for simulated
+    GPU packets. I was able to provide a low-cost extensible method of generating
+    serialization methods without needing to explicitly specify the type of object
+    that was being serialized. I also designed the program to save enough data to
+    replicate segmentation faults and other signal-based program crashes while also
+    incrementally compressing the saved data to reduce memory and disk usage. In
+    the process of developing the system, I also honed my skills with using ssh,
+    tmux, and Perforce as a version control system.
 - id: docai
   company: doc.ai
   role: Software Engineering Intern

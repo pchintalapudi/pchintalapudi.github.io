@@ -1,6 +1,6 @@
 <template>
   <article id="work">
-    <b class="icon"><flask-vue :color="'yellow'"></flask-vue></b>
+    <icon-vue :color="'yellow'" :icon="'science'"></icon-vue>
     <h2 class="header">Work Experience</h2>
     <section class="experiences">
       <article
@@ -29,12 +29,12 @@
 <script lang="ts">
 import { useStore } from "@/store";
 import { defineComponent } from "vue";
-import FlaskVue from "./icons/Flask.vue";
+import IconVue from "./Icon.vue";
 import { marked } from "marked";
 
 export default defineComponent({
   components: {
-    FlaskVue,
+    IconVue,
   },
   computed: {
     experiences() {
@@ -69,25 +69,7 @@ export default defineComponent({
   padding: 20px 5vw;
 }
 .icon {
-  width: 120px;
-  height: 120px;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-}
-.icon::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(var(--fg-color), 0.1);
-  transition: background-color 300ms;
-  border-radius: 50%;
-}
-.icon > * {
-  transform: scale(3);
+  font-size: 10em;
 }
 .experiences {
   display: grid;
@@ -114,13 +96,6 @@ export default defineComponent({
   display: inline-block;
 }
 @media (max-width: 800px) {
-  .icon {
-    width: 100px;
-    height: 100px;
-  }
-  .icon > * {
-    transform: scale(2.5);
-  }
 }
 @media (max-width: 600px) {
   .experiences {

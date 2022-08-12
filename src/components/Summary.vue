@@ -2,7 +2,7 @@
   <article id="summary">
     <section>
       <p class="unlinkable">
-        <b class="icon"><tools :color="'blue'"></tools></b>
+        <icon-vue :color="'blue'" :icon="'devices'"></icon-vue>
         <h2>Skills and Expertise</h2>
       </p>
       <div class="data">
@@ -21,7 +21,7 @@
     </section>
     <section>
       <a class="linkable" href="#education" style="--linkable-color:var(--green)">
-        <b class="icon"><graduation-cap :color="'green'"></graduation-cap></b>
+        <icon-vue :color="'green'" :icon="'school'"></icon-vue>
         <h2>Education and Coursework</h2>
       </a>
       <div class="data">
@@ -40,7 +40,7 @@
     </section>
     <section>
       <a class="linkable" href="#work" style="--linkable-color:var(--yellow)">
-        <b class="icon"><flask :color="'yellow'"></flask></b>
+        <icon-vue :color="'yellow'" :icon="'science'"></icon-vue>
         <h2>Internships and Research</h2>
       </a>
       <div class="data">
@@ -62,19 +62,13 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import NumberedStat from "./NumberedStat.vue";
-import GraduationCap from "./icons/GraduationCap.vue";
-import Tools from "./icons/Tools.vue";
-import Monitor from "./icons/Monitor.vue";
-import Flask from "./icons/Flask.vue";
+import IconVue from "./Icon.vue";
 import { useStore } from "@/store";
 
 export default defineComponent({
   components: {
     NumberedStat,
-    GraduationCap,
-    Tools,
-    Monitor,
-    Flask,
+    IconVue
   },
   setup() {},
   computed: {
@@ -120,24 +114,7 @@ export default defineComponent({
   display: contents;
 }
 .icon {
-  width: 100px;
-  height: 100px;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  margin: 20px;
-}
-.icon > * {
-  transform: scale(2.5);
-}
-.icon::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(var(--fg-color), 0.1);
-  border-radius: 50%;
-  transition: background-color 300ms;
+  font-size: 7.5em;
 }
 .linkable {
   cursor: pointer;
@@ -159,14 +136,6 @@ export default defineComponent({
 @media (max-width: 800px) {
   #summary {
     font-size: 1.125em;
-  }
-  .icon {
-    width: 80px;
-    height: 80px;
-    margin: 16px;
-  }
-  .icon > * {
-    transform: scale(2);
   }
 }
 @media (max-width: 700px) {
